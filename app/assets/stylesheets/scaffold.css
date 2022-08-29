@@ -39,10 +39,15 @@ header {
   position: relative;
   height: 25vh;
   width: 100%;
-  background-image: url('https://images.unsplash.com/photo-1660536754523-13d686a48178?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=857&q=80');
+  background-image: url('https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80');
   background-size: cover;
   background-position: center;
   margin-bottom: 20px;
+  color: rgba(0, 0, 0, 0.916);
+}
+
+.navbar-link {
+  color: black;
 }
 
 header nav {
