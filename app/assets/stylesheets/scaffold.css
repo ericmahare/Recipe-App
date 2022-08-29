@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.916);
+  color: azure;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.form {
+  margin: 1rem 40%;
+}
+
+.flash {
+  text-align: center;
+  font-size: 2rem;
+  padding: 0.5rem;
+}
+
+.flash .success {
+  color: aquamarine;
+}
+
+.flash .error {
+  color: crimson;
+}
+
+header {
+  position: relative;
+  height: 25vh;
+  width: 100%;
+  background-image: url('https://images.unsplash.com/photo-1660536754523-13d686a48178?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=857&q=80');
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 20px;
+}
+
+header nav {
+  text-align: center;
+  padding: 1rem;
+}
+
+header a {
+  color: azure;
+  text-decoration: none;
+}
+
+header h1 {
+  color: azure;
+  font-size: 1.5rem;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px;
+  border: 2px solid azure;
+}
+
+footer {
+  padding: 2vh;
+  margin-top: 5rem;
+  text-align: center;
+  color: azure;
+  background-color: black;
+}
