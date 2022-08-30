@@ -2,3 +2,38 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+.recipe {
+  width: 90%;
+  min-height: 10vh;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  border: 1px solid gray;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sub {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 20%;
+}
+
+.sub span a {
+  color: aqua;
+  text-decoration: none;
+}
+
+.sub span a:hover {
+  text-decoration: underline;
+}
+
+.center-link {
+  margin: 2rem 45%;
+  color: aqua;
+}
+
+.center-link:hover {
+  text-decoration: none;
+}

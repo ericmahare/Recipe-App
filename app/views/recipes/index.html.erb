@@ -1,25 +1,22 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Recipes</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+  <div>
     <% @recipes.each do |recipe| %>
-      <tr>
-        <td><%= link_to 'Show', recipe %></td>
-        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <div class="recipe">
+          <div class="sub">
+            <h2><%= recipe.name %></h2>
+            <span>
+              <%= link_to 'Show', recipe %>
+              <%= link_to 'Edit', edit_recipe_path(recipe) %>
+              <%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </span>
+          </div>
+          <p><%= recipe.description %></p>
+        </div>
+        
     <% end %>
-  </tbody>
-</table>
+  </div>
 
 <br>
 
-<%= link_to 'New Recipe', new_recipe_path %>
+<%= link_to 'New Recipe', new_recipe_path, :class => 'center-link' %>
