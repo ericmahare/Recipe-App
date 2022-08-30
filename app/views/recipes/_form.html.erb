@@ -18,6 +18,14 @@
       <div class="">
         <%= form.text_area :description, size:"37x5", placeholder:"Recipe Descrption" %>
       </div>
+      <div class="">
+        <h4>Preparation Time</h4>
+        <%= form.time_field :preparation_time %>
+      </div>
+      <div class="">
+        <h4>Cooking Time</h4>
+        <%= form.time_field :cooking_time %>
+      </div>
       <div class="check">
         <%= form.check_box :public %>
         <%= form.label :public %>
