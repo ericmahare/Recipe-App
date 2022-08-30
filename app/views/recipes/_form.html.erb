@@ -15,16 +15,14 @@
       <div class="field">
         <%= form.text_field :name, size:"73x10", placeholder:"Recipe Name" %>
       </div>
-      <div class="">
-        <%= form.text_area :description, size:"37x5", placeholder:"Recipe Descrption" %>
+      <div class="field">
+        <%= form.text_field :preparation_time, placeholder:"Preparation Time" %>
+      </div>
+      <div class="field">
+        <%= form.text_field :cooking_time, placeholder:"Cooking Time" %>
       </div>
       <div class="">
-        <h4>Preparation Time</h4>
-        <%= form.time_field :preparation_time %>
-      </div>
-      <div class="">
-        <h4>Cooking Time</h4>
-        <%= form.time_field :cooking_time %>
+        <%= form.text_area :description, size:"34x5", placeholder:"Recipe Descrption" %>
       </div>
       <div class="check">
         <%= form.check_box :public %>
