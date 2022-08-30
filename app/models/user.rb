@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :name, presence: true
+  validates :recipes_count, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   has_many :recipes, counter_cache: true
 
