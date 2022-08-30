@@ -37,3 +37,28 @@
 .center-link:hover {
   text-decoration: none;
 }
+
+.top-section {
+  display: flex;
+  justify-content: space-around;
+}
+
+.top-left {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.mid-section {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 1px solid gray;
+  padding-bottom: 2rem;
+}
+
+.mid-section button {
+  padding: 10px 1rem;
+  border-radius: 0;
+  background-color: aqua;
+}
