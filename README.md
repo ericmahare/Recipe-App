@@ -53,9 +53,10 @@ rails s
 
 - LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-chiacarlyle-black?logo=LinkedIn&logoColor=0A66C2&style=plastic)](https://www.linkedin.com/in/eric-mahare-358944183/)
 
+- Gmail: [![Gmail Badge](https://img.shields.io/badge/-chiacarlyle-black?logo=Gmail&logoColor=EA4335&style=plastic)](mailto:erikmahare@gmail.com)
+
 - Twitter: [![Twitter Badge](https://img.shields.io/badge/-chiacarlyle-black?logo=Twitter&logoColor=1DA1F2&style=plastic)](https://twitter.com/erikmahare)
 
-- Gmail: [![Gmail Badge](https://img.shields.io/badge/-chiacarlyle-black?logo=Gmail&logoColor=EA4335&style=plastic)](mailto:erikmahare@gmail.com)
 
 
 ## 🤝 Contributing
