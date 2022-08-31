@@ -1,6 +1,7 @@
 <section>
 <h2>All foods</h2>
 <div class="table-wrapper">
+<div class='create-food' > <%= link_to 'Add New food', new_food_path %></div>
     <table class="fl-table">
         <thead>
         <tr>
@@ -16,7 +17,7 @@
               <td><%=food.name%></td>
               <td><%=food.measurement_unit%></td>
               <td>$ <%=food.price%></td>
-              <td>delete</td>
+              <td class="food-delete">delete</td>
           </tr>
         <%end%>
         <tbody>
