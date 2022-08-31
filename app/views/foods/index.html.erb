@@ -1,0 +1,25 @@
+<section>
+<h2>All foods</h2>
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+        <tr>
+            <th>Food</th>
+            <th>Measurement Unit</th>
+            <th>Unit Price</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <%@foods.each do |food|%>
+          <tr>
+              <td><%=food.name%></td>
+              <td><%=food.measurement_unit%></td>
+              <td>$ <%=food.price%></td>
+              <td>delete</td>
+          </tr>
+        <%end%>
+        <tbody>
+    </table>
+</div>
+</section>
