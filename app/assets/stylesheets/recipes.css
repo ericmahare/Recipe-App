@@ -2,6 +2,14 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+h1 span,
+h2 span {
+  background-color: goldenrod;
+  border-radius: 30%;
+  padding: 0.5rem;
+  font-size: medium;
+  font-style: italic;
+}
 
 .recipe {
   width: 90%;
@@ -25,12 +33,16 @@
   text-decoration: none;
 }
 
+.sub span .delete {
+  color: crimson;
+}
+
 .sub span a:hover {
   text-decoration: underline;
 }
 
 .center-link {
-  margin: 2rem 45%;
+  margin: 2rem 47%;
   color: aqua;
 }
 
