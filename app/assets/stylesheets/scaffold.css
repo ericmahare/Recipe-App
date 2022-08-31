@@ -137,6 +137,18 @@ h2{
   padding: 30px 0;
 }
 
+.create-food {
+  margin: 20px 0;
+}
+
+.create-food a {
+  text-decoration:none;
+  background-color: green;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
 /* Table Styles */
 
 .table-wrapper{
@@ -186,6 +198,14 @@ h2{
   color: #111;
 }
 
+.food-delete {
+  cursor: pointer;
+  color:red;
+}
+
+.food-delete:hover {
+  text-decoration: underline;
+}
 /* Responsive */
 
 @media (max-width: 767px) {
