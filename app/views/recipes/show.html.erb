@@ -1,0 +1,29 @@
+<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+<%= link_to 'Back', recipes_path %>
+
+<h1><%= @recipe.name %></h1>
+<div class="top-section">
+  <div class="top-left">
+    <h4>Preparation Time: &nbsp <i><%= @recipe.preparation_time %></i></h4>
+    <h4>Cooking Time: &nbsp <i><%= @recipe.cooking_time %></i></h4>
+    <h6>Cooking steps go here...</h6>
+  </div>
+  <div class="top-right">
+    <% if @recipe.public %>
+      <h3>Public Recipe</h3>
+      <% else %>
+        <h3>Private Recipe</h3>
+    <% end %>
+  </div>
+</div>
+<div class="mid-section">
+  <div class="mid-left">
+    <button type="button">Generate Shopping List</button>
+  </div>
+  <div class="mid-right">
+    <button>Add Ingredient</button>
+  </div>
+</div>
+<div class="Bottom-section">
+  <table></table>
+</div>

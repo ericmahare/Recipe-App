@@ -1,0 +1,23 @@
+<h1>My Recipes</h1>
+
+  <div>
+    <% @recipes.each do |recipe| %>
+      <% if recipe.user_id === current_user.id %>
+        <div class="recipe">
+          <div class="sub">
+            <h2><%= recipe.name %></h2>
+            <span>
+              <%= link_to 'Details', recipe %>
+              <%= link_to 'Edit', edit_recipe_path(recipe) %>
+              <%= link_to 'Delete', recipes_delete_url(recipe), method: :delete, data: { confirm: 'Are you sure?' } %>
+            </span>
+          </div>
+          <p><%= recipe.description %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+<br>
+
+<%= link_to 'New Recipe', new_recipe_path, :class => 'center-link' %>
