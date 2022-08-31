@@ -2,9 +2,11 @@ class FoodsController < ApplicationController
   def index
     @foods = Food.all
   end
-  def new 
+
+  def new
     @food = Food.new
   end
+
   def create
     @food = Food.new(food_params)
     if @food.save
@@ -14,6 +16,7 @@ class FoodsController < ApplicationController
       render 'new'
     end
   end
+
   private
 
   def food_params
