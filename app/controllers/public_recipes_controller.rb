@@ -1,7 +1,7 @@
 class PublicRecipesController < ApplicationController
   before_action :set_recipe, except: %i[index]
   def index
-    @recipes = Recipe.where(public: true).order(created_at: :DESC)
+    @recipes = Recipe.where(public: true).includes([:user]).order(created_at: :DESC)
   end
 
   def show; end
