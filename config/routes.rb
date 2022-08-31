@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
   resources :recipes
+  resources :public_recipes
   resources :pages
   devise_for :users
   resources :foods
