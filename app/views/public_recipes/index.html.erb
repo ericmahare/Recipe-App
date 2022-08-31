@@ -1,10 +1,10 @@
 <h1>Public Recipes</h1>
 
   <div>
-    <% @recipes.each do |recipe| %>
+    <% @recipes.includes([:user]).each do |recipe| %>
         <div class="recipe">
           <div class="sub">
-            <h2><%= recipe.name %> <span>by <%%></span></h2>
+            <h2><%= recipe.name %> <span>by <%= recipe.user.name %></span></h2>
             <span>
               <%= link_to 'Details', recipe %>
               <% if current_user && recipe.user_id === current_user.id %>

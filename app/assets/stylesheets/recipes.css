@@ -2,7 +2,8 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
-h1 span {
+h1 span,
+h2 span {
   background-color: goldenrod;
   border-radius: 30%;
   padding: 0.5rem;
