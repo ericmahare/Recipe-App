@@ -1,6 +1,5 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: %i[show edit update destroy]
-  # before_action :set_user
   before_action :authenticate_user!
 
   # GET /recipes or /recipes.json
@@ -58,11 +57,6 @@ class RecipesController < ApplicationController
   end
 
   private
-
-  # Set the user
-  # def set_user
-  #   @user = User.find(@recipe.user_id)
-  # end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_recipe

@@ -1,4 +1,4 @@
-<h1>My Recipes</h1>
+<h1>My Recipes <span><%= current_user.recipes_count %></span></h1>
 
   <div>
     <% @recipes.each do |recipe| %>
