@@ -17,7 +17,8 @@
               <td><%=food.name%></td>
               <td><%=food.measurement_unit%></td>
               <td>$ <%=food.price%></td>
-              <td class="food-delete">delete</td>
+              <td><%= button_to "Delete Food", food_path(food.id), method: :delete, 
+                    data: {confirm: 'Are you sure?'}, class: "btn-delete" %></td>
           </tr>
         <%end%>
         <tbody>
