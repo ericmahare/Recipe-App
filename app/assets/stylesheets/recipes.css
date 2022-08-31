@@ -32,6 +32,10 @@ h1 span {
   text-decoration: none;
 }
 
+.sub span .delete {
+  color: crimson;
+}
+
 .sub span a:hover {
   text-decoration: underline;
 }
