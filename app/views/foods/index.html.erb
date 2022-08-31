@@ -12,14 +12,17 @@
         </tr>
         </thead>
         <tbody>
+    
         <%@foods.each do |food|%>
-          <tr>
-              <td><%=food.name%></td>
-              <td><%=food.measurement_unit%></td>
-              <td>$ <%=food.price%></td>
-              <td><%= button_to "Delete Food", food_path(food.id), method: :delete, 
-                    data: {confirm: 'Are you sure?'}, class: "btn-delete" %></td>
-          </tr>
+            <% if food.user_id === current_user.id %>
+                <tr>
+                    <td><%=food.name%></td>
+                    <td><%=food.measurement_unit%></td>
+                    <td>$ <%=food.price%></td>
+                    <td><%= button_to "Delete Food", food_path(food.id), method: :delete, 
+                            data: {confirm: 'Are you sure?'}, class: "btn-delete" %></td>
+                </tr>
+            <%end%>
         <%end%>
         <tbody>
     </table>
