@@ -198,9 +198,13 @@ h2{
   color: #111;
 }
 
-.food-delete {
+.btn-delete {
+  color: #fff;
+  background-color:rgb(195, 14, 14);
+  border: none;
+  padding: 5px;
+  border-radius: 3px;
   cursor: pointer;
-  color:red;
 }
 
 .food-delete:hover {
