@@ -9,7 +9,7 @@ class User < ApplicationRecord
   validates :recipes_count, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   has_many :recipes, counter_cache: true
-
+  has_many :foods
   # private
 
   def init

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :public_recipes
   resources :pages
   devise_for :users
+  resources :foods
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   delete 'recipes/:id/delete' => 'recipes#destroy', as: 'recipes_delete'
   get '/recipes/:id/delete' => 'recipes#destroy'
