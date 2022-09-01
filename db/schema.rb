@@ -26,13 +26,13 @@ ActiveRecord::Schema.define(version: 2022_09_01_090032) do
     t.index ["user_id"], name: "index_foods_on_user_id"
   end
 
-  create_table "foods_recipes", id: false, force: :cascade do |t|
+  create_table "ingredients", id: false, force: :cascade do |t|
     t.bigint "recipe_id", null: false
     t.bigint "food_id", null: false
     t.integer "quantity", null: false
-    t.index ["food_id", "recipe_id"], name: "index_foods_recipes_on_food_id_and_recipe_id"
-    t.index ["quantity"], name: "index_foods_recipes_on_quantity"
-    t.index ["recipe_id", "food_id"], name: "index_foods_recipes_on_recipe_id_and_food_id"
+    t.index ["food_id", "recipe_id"], name: "index_ingredients_on_food_id_and_recipe_id"
+    t.index ["quantity"], name: "index_ingredients_on_quantity"
+    t.index ["recipe_id", "food_id"], name: "index_ingredients_on_recipe_id_and_food_id"
   end
 
   create_table "pages", force: :cascade do |t|
