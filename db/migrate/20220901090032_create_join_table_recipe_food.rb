@@ -4,6 +4,8 @@ class CreateJoinTableRecipeFood < ActiveRecord::Migration[6.1]
       t.integer :quantity, null: false, index: true
       t.index [:recipe_id, :food_id]
       t.index [:food_id, :recipe_id]
+
+      t.timestamps
     end
   end
 end
