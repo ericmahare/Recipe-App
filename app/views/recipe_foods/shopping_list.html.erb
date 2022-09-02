@@ -1,0 +1,25 @@
+<h3 class="text-center mt-4"> Shopping list </h3>
+<p class="text-info h5">Amount of foods to buy: <%= @missing_food.count %></p>
+<p class="text-info h6">Total value of of food needed: $ <%= @total_price %></p>
+
+<table class="table table-ligth table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Quantity</th> 
+      <th scope="col">Unit Price</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @missing_food.each_with_index do |food, index|%>
+    <tr>
+      <th scope="row"><%=index%></th>
+      <td><%=food.name%></td>
+      <td><%= food.measurement_unit %></td>
+      <td>$<%=food.price%></td>
+    </tr>
+    <%end%>
+  </tbody>
+</table>
+<p><= <%=link_to :back%></p>

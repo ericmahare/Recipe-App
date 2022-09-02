@@ -32,9 +32,7 @@ class RecipeFoodsController < ApplicationController
 
    def shopping_list
     foods = Food.includes(:recipes).where(user: current_user)
-    # filter food missing for all recipes
     @missing_food = foods.filter { |food| food.recipes.blank? }
-    # calculate sum
     @total_price = @missing_food.sum(&:price)
    end
 
