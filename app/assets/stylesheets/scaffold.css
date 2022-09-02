@@ -107,7 +107,9 @@ nav {
   box-shadow: 2px 5px rgba(165, 165, 165, 0.29);
   padding: 1rem 1rem;
   position: sticky;
+  top: 0;
   z-index: 100;
+  background-color: rgba(0, 255, 255, 0.099);
 }
 
 .user-name {
@@ -145,7 +147,7 @@ nav {
 .signout {
   border: 1px solid black;
   border-radius: 45%;
-  background-color: crimson;
+  background-color: rgba(118, 4, 27, 0.534);
   padding: 5px 10px;
 }
 
