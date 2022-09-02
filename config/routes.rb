@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   delete 'recipes/:id/delete' => 'recipes#destroy', as: 'recipes_delete'
   get '/recipes/:id/delete' => 'recipes#destroy'
+  delete '/recipes/:recipe_id/recipe_foods/:id/delete' => 'recipe_foods#destroy', as: 'recipe_foods_delete'
+  get '/recipes/:recipe_id/recipe_foods/:id/delete' => 'recipe_foods#destroy'
   # patch '/recipes/:id', to: 'recipes#mark_as_public', as: :update_recipe
 
   # Defines the root path route ("/")
