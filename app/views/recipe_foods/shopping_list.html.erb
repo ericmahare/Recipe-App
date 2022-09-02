@@ -1,0 +1,26 @@
+<h3 class="text-center mt-4"> Shopping list </h3>
+
+<div class="table-wrapper">
+<p class="text-info h5">Amount of foods to buy: <%= @missing_food.count %></p>
+<p class="text-info h6">Total value of of food needed: $ <%= @total_price %></p>
+      <table class="fl-table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Quantity</th> 
+          <th scope="col">Unit Price</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% @missing_food.each_with_index do |food, index|%>
+      <tr>
+        <th scope="row"><%=index + 1%></th>
+        <td><%=food.name%></td>
+        <td><%= food.measurement_unit %></td>
+        <td>$<%=food.price%></td>
+      </tr>
+      <%end%>
+    </tbody>
+      </table>
+</div>

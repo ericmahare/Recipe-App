@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :public_recipes
   devise_for :users
   resources :foods
+  
+  get '/shoppingList_list/:recipe_id', to: 'recipe_foods#shopping_list', as: :shoppingList_list
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   delete 'recipes/:id/delete' => 'recipes#destroy', as: 'recipes_delete'
   get '/recipes/:id/delete' => 'recipes#destroy'
