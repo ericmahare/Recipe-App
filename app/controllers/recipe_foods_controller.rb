@@ -30,6 +30,17 @@ class RecipeFoodsController < ApplicationController
     end
   end
 
+  def destroy
+    @recipe_food = RecipeFood.find(params[:id])
+    @recipe_food.destroy
+    @recipe = Recipe.find(params[:recipe_id])
+
+    respond_to do |format|
+      format.html { redirect_to recipe_url(@recipe) }
+      flash[:success] = 'Item was successfully deleted.'
+    end
+  end
+
   def shopping_list
     foods = Food.includes(:recipes).where(user: current_user)
     @missing_food = foods.filter { |food| food.recipes.blank? }

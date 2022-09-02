@@ -10,31 +10,28 @@
   </div>
   <div class="top-right">
     <% if @recipe.public %>
-      <h3>Public Recipe</h3>
+      <h2><span>Public Recipe</span></h2>
       <% else %>
-        <h3>Private Recipe</h3>
+        <h2><span>Private Recipe</span></h2>
     <% end %>
   </div>
 </div>
+<% if current_user && current_user.id === @recipe.user_id %>
 <div class="mid-section">
   <div class="mid-left">
     <%= link_to "Generate shopping list", shoppingList_list_path(@recipe), class: "btn btn-sm btn-info p-2" %>
   </div>
   <div class="mid-right, create-food">
-    <%# <a href='#' onClick='reveal()'> Add Ingredient</a> %>
     <button type="button" class="btn btn-sm btn-info" data-toggle="modal" data-target="#exampleModalCenter">Add Ingredient</button>
-    <div class="hidden" id="hidden-div">
-      <%= render 'form', recipe: @recipe %>
-      <%# <%= render partial: 'recipe_foods/form', locals: {recipe_foods: @recipe.recipe_food.build, recipe: @recipe} %> %>
-    </div>
   </div>
 </div>
+<% end %>
 <div class="Bottom-section">
   <h4 class="mt-4 text-center">Ingredients </h4>
 <div class="card d-flex justify-content-center mt-4" style="width: 80%; margin:auto">
     <table class="table table-ligth table-hover">
-        <% if @recipe.foods.empty? %>
-            <p>No food in this recipe</p>
+        <% if @recipe.recipe_foods.empty? %>
+            <thead><tr><th>No food in this recipe</th></tr></thead>
         <% else %>
             <thead>
                 <tr>
@@ -52,12 +49,13 @@
                     <td><%= ingredient.food.name %></td>
                     <td><%= ingredient.quantity %></td>
                     <td>$ <%= ingredient.food.price %></td>
-                    
+                    <% if current_user && current_user.id === @recipe.user_id %>
                     <td>
                         <%= link_to "Edit", edit_recipe_recipe_food_path(@recipe, ingredient), class:"btn btn-sm btn-primary"%>
                   
-                        <%= link_to "Delete", recipe_recipe_food_path(@recipe, ingredient), method: :delete, class:"btn btn-sm btn-danger" %>
+                        <%= link_to "Delete", recipe_foods_delete_path(@recipe, ingredient), method: :delete, class:"btn btn-sm btn-danger" %>
                     </td>
+                    <% end %>
                 </tr>
                 <% end %>
             </tbody>
@@ -83,10 +81,3 @@
     </div>
   </div>
 </div>
-
-<%# <script>
-  function reveal() {
-    var element = document.getElementById("hidden-div");
-    element.classList.remove("hidden");
-  }
-</script> %>

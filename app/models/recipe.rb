@@ -1,5 +1,5 @@
 class Recipe < ApplicationRecord
-  validates :name, :description, :cooking_time, :prep_time, presence: true
+  validates :name, :description, :cooking_time, :preparation_time, presence: true
   after_initialize :init
 
   belongs_to :user, counter_cache: true

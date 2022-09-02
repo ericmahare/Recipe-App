@@ -19,6 +19,13 @@ h2 span {
   border: 1px solid gray;
   display: flex;
   justify-content: space-between;
+  position: relative;
+}
+
+.time {
+  position: absolute;
+  top: 0;
+  left: 86%;
 }
 
 .sub {
@@ -26,6 +33,10 @@ h2 span {
   flex-direction: column;
   justify-content: space-between;
   min-width: 20%;
+}
+
+.sub-main {
+  margin-top: 7px;
 }
 
 .sub span a {
