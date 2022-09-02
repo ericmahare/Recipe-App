@@ -18,7 +18,7 @@
 </div>
 <div class="mid-section">
   <div class="mid-left">
-    <button type="button">Generate Shopping List</button>
+    <%= link_to "Generate shopping list", shoppingList_list_path(@recipe), class: "btn btn-sm btn-info p-2" %>
   </div>
   <div class="mid-right, create-food">
     <%# <a href='#' onClick='reveal()'> Add Ingredient</a> %>

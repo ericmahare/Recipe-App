@@ -30,11 +30,11 @@ class RecipeFoodsController < ApplicationController
     end
   end
 
-   def shopping_list
+  def shopping_list
     foods = Food.includes(:recipes).where(user: current_user)
     @missing_food = foods.filter { |food| food.recipes.blank? }
     @total_price = @missing_food.sum(&:price)
-   end
+  end
 
   private
 
