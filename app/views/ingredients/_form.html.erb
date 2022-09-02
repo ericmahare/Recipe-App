@@ -1,0 +1,35 @@
+<div class="form">
+  <%= form_for(ingredient, as: ingredient, url: new_recipe_ingredient_post_path, html: { data: { turbo: false} } ) do |f| %>
+    <div id="error_explanation">
+          <% if @ingredient.errors.any? %>
+              <h3>
+                <%= pluralize(@ingredient.errors.count, "error") %> prohibited
+                this item from being saved:
+              </h3>
+              <ul>
+                <% @ingredient.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                <% end %>
+              </ul>
+          <% end %>
+        </div>
+       <div class= "form-group">
+      <%= f.label :food%> 
+      <div>
+      <%= f.text_field :food,   class:"form-control", placeholder: "Enter food name", autofocus: true %>
+      </div>
+    </div>
+
+    <div class= "form-group" >
+      <%= f.label :quantity %> 
+      <div>
+      <%= f.number_field :quantity,   class:"form-control", autofocus: true %>
+      </div>
+    </div>
+    
+    <div class= "form-group" >
+      <div></div>
+      <%= f.submit%>
+    </div>
+    <% end %>
+</div>

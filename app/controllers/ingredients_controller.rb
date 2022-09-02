@@ -8,7 +8,7 @@ class IngredientsController < ApplicationController
   end
 
   def create
-    @ingredient = @recipe.ingredients.build(quantity: ingredient_params, recipe_id: @recipe.id, food_id: @food.id)
+    @ingredient = @recipe.ingredients.build(ingredient_params, recipe_id: @recipe.id, food_id: @food.id)
     if @ingredient.save
       flash[:success] = 'Ingredient added.'
     else
@@ -55,6 +55,6 @@ class IngredientsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def ingredient_params
-    params.require(:ingredient).permit(:quantity)
+    params.require(:ingredient).permit(:quantity, :recipe_id, :food_id)
   end
 end

@@ -20,10 +20,73 @@
   <div class="mid-left">
     <button type="button">Generate Shopping List</button>
   </div>
-  <div class="mid-right">
-    <button>Add Ingredient</button>
+  <div class="mid-right, create-food">
+    <%# <a href='#' onClick='reveal()'> Add Ingredient</a> %>
+    <button type="button" class="btn btn-sm btn-info" data-toggle="modal" data-target="#exampleModalCenter">Add Ingredient</button>
+    <div class="hidden" id="hidden-div">
+      <%= render 'form', recipe: @recipe %>
+      <%# <%= render partial: 'recipe_foods/form', locals: {recipe_foods: @recipe.recipe_food.build, recipe: @recipe} %> %>
+    </div>
   </div>
 </div>
 <div class="Bottom-section">
-  <table></table>
+  <h4 class="mt-4 text-center">Ingredients </h4>
+<div class="card d-flex justify-content-center mt-4" style="width: 80%; margin:auto">
+    <table class="table table-ligth table-hover">
+        <% if @recipe.foods.empty? %>
+            <p>No food in this recipe</p>
+        <% else %>
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Food Name</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Food Price</th>
+                <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @recipe.recipe_foods.each_with_index do |ingredient, index|%>
+                <tr>
+                    <th scope="row"><%=index + 1%></th>
+                    <td><%= ingredient.food.name %></td>
+                    <td><%= ingredient.quantity %></td>
+                    <td>$ <%= ingredient.food.price %></td>
+                    
+                    <td>
+                        <%= link_to "Edit", edit_recipe_recipe_food_path(@recipe, ingredient), class:"btn btn-sm btn-primary"%>
+                  
+                        <%= link_to "Delete", recipe_recipe_food_path(@recipe, ingredient), method: :delete, class:"btn btn-sm btn-danger" %>
+                    </td>
+                </tr>
+                <% end %>
+            </tbody>
+        <% end %>
+    </table>
 </div>
+</div>
+
+<%# Modal %>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Add ingredients for <%=@recipe.name%></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= render "recipe_foods/form"%>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%# <script>
+  function reveal() {
+    var element = document.getElementById("hidden-div");
+    element.classList.remove("hidden");
+  }
+</script> %>
