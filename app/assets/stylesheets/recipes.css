@@ -44,10 +44,12 @@ h2 span {
 .center-link {
   margin: 2rem 47%;
   color: aqua;
+  text-decoration: underline;
 }
 
 .center-link:hover {
   text-decoration: none;
+  color: goldenrod;
 }
 
 .top-section {
