@@ -10,9 +10,9 @@
   </div>
   <div class="top-right">
     <% if @recipe.public %>
-      <h3>Public Recipe</h3>
+      <h2><span>Public Recipe</span></h2>
       <% else %>
-        <h3>Private Recipe</h3>
+        <h2><span>Private Recipe</span></h2>
     <% end %>
   </div>
 </div>
@@ -21,12 +21,7 @@
     <button type="button">Generate Shopping List</button>
   </div>
   <div class="mid-right, create-food">
-    <%# <a href='#' onClick='reveal()'> Add Ingredient</a> %>
     <button type="button" class="btn btn-sm btn-info" data-toggle="modal" data-target="#exampleModalCenter">Add Ingredient</button>
-    <div class="hidden" id="hidden-div">
-      <%= render 'form', recipe: @recipe %>
-      <%# <%= render partial: 'recipe_foods/form', locals: {recipe_foods: @recipe.recipe_food.build, recipe: @recipe} %> %>
-    </div>
   </div>
 </div>
 <div class="Bottom-section">
@@ -83,10 +78,3 @@
     </div>
   </div>
 </div>
-
-<%# <script>
-  function reveal() {
-    var element = document.getElementById("hidden-div");
-    element.classList.remove("hidden");
-  }
-</script> %>

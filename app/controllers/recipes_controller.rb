@@ -61,6 +61,16 @@ class RecipesController < ApplicationController
     end
   end
 
+  # def mark_as_public
+  #   @recipe = Recipe.find(params[:id])
+  #   if @recipe.public
+  #     @recipe.update(public: false)
+  #   else
+  #     @recipe.update(public: true)
+  #   end
+  #   redirect_to @recipe
+  # end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
