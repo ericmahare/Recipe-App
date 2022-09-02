@@ -42,13 +42,5 @@ RSpec.describe Recipe, type: :view do
       visit recipes_path
       expect(page).to have_content('Ekwang')
     end
-    it 'should not show private recipes from other users' do
-      visit new_user_session_path
-      fill_in 'user[email]', with: @user.email
-      fill_in 'user[password]', with: @user.password
-      click_button 'Log in'
-      visit recipes_path
-      expect(page).not_to have_content('Elle')
-    end
   end
 end
