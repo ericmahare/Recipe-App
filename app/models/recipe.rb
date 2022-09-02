@@ -1,10 +1,12 @@
 class Recipe < ApplicationRecord
-  validates :name, presence: true
+  validates :name, :description, :cooking_time, :prep_time, presence: true
+  after_initialize :init
 
   belongs_to :user, counter_cache: true
-  # has_many :food, independent: :destroy
+  has_many :recipe_foods, dependent: :destroy
+  has_many :foods, through: :recipe_foods
 
-  def public_recipes
-    Recipe.where(public: true).order(created_at: :DESC)
+  def init
+    self.recipe_foods_count ||= 0
   end
 end

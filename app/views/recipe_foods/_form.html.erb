@@ -1,0 +1,15 @@
+<%= form_with model: [@recipe, @recipe.recipe_foods.build], local: true do |f| %>
+    <div class="field">
+        <%= f.label :Ingredient, class:"form-label" %><br>
+        <%= f.select :food_id, current_user.foods.collect {|food| [food.name, food.id]},{ include_blank: true} , class:"custom-select", id:"inputGroupSelect01" %><br>
+    </div>
+
+    <div class="field">
+        <%= f.label :quantity, class:"form-label" %><br>
+        <%= f.number_field :quantity ,  class:"form-control" , required: true, placeholder: '1',  min: 1%><br>
+    </div>
+
+    <div class="fiel">
+        <%= f.submit "Add ingredient", class:"btn btn-success form-control" %>
+    </div>
+<% end %>

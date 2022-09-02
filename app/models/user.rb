@@ -8,12 +8,13 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :recipes_count, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
-  has_many :recipes, counter_cache: true
-  has_many :foods
-  # private
+  has_many :recipes, dependent: :destroy, counter_cache: true
+  has_many :foods, dependent: :destroy
+
+  private
 
   def init
-    self.recipes_count ||= 0.to_s
+    self.recipes_count ||= 0
     true
   end
 end
