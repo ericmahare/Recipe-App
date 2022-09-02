@@ -99,20 +99,54 @@ header {
   color: rgba(0, 0, 0, 0.916);
 }
 
-.navbar {
-  background-color: rgb(255, 255, 255);
-  height: 50px;
+nav {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid silver;
+  border-radius: 10rem;
+  box-shadow: 2px 5px rgba(165, 165, 165, 0.29);
+  padding: 1rem 1rem;
+  position: sticky;
+  z-index: 100;
+}
+
+.user-name {
+  border: 1px solid blue;
+  border-radius: 40%;
+  background-color: rgb(18, 3, 3);
+  color: silver;
+  font-size: larger;
+  padding: 0.5rem;
+}
+
+.app-links {
+  border-bottom: 1px solid gold;
+  border-radius: 3rem;
 }
 
 .navbar-link {
-  color: #111;
   font-weight: 500;
 }
 
-.auto {
-  position: absolute;
-  right: 10px;
-  border-radius: 7px;
+.signup {
+  border: 1px solid black;
+  border-radius: 45%;
+  background-color: rgb(0, 81, 0);
+  padding: 5px 10px;
+}
+
+.signin {
+  border: 1px solid black;
+  border-radius: 45%;
+  background-color: rgb(19, 19, 59);
+  padding: 5px 10px;
+}
+
+.signout {
+  border: 1px solid black;
+  border-radius: 45%;
+  background-color: crimson;
+  padding: 5px 10px;
 }
 
 header a {
