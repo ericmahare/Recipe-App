@@ -1,7 +1,19 @@
 class PublicRecipesController < ApplicationController
   before_action :set_recipe, except: %i[index]
   def index
-    @recipes = Recipe.where(public: true).includes([:user]).order(created_at: :DESC)
+    @recipes = Recipe.includes(:recipe_foods, :foods,
+                               :user).where(public: true).order(created_at: :desc).map do |recipe|
+      {
+        id: recipe.id,
+        name: recipe.name,
+        description: recipe.description,
+        author: recipe.user.name,
+        author_id: recipe.user.id,
+        created_at: recipe.created_at,
+        items: recipe.recipe_foods_count,
+        total_price: recipe.foods.map(&:price).sum
+      }
+    end
   end
 
   def show; end
