@@ -12,6 +12,7 @@ body {
   background-color: rgba(0, 0, 0, 0.916);
   color: azure;
   font-family: 'Lato', sans-serif;
+  margin-bottom: 70px;
 }
 
 h1,
@@ -62,6 +63,10 @@ h1 {
   color: #fff;
 }
 
+.success {
+  font-size: 12px;
+}
+
 .field input {
   width: 100%;
   border: 0.7px solid #ccc;
@@ -94,19 +99,34 @@ header {
   color: rgba(0, 0, 0, 0.916);
 }
 
-.navbar-link {
-  color: #fff;
-  font-weight: 900;
+.navbar {
+  background-color: rgb(255, 255, 255);
+  height: 50px;
 }
 
-header nav {
-  text-align: center;
-  padding: 1rem;
+.navbar-link {
+  color: #111;
+  font-weight: 500;
+}
+
+.auto {
+  position: absolute;
+  right: 10px;
+  border-radius: 7px;
 }
 
 header a {
   color: azure;
   text-decoration: none;
+}
+
+header a:hover {
+  color: rgb(142, 12, 223);
+  text-decoration: none;
+}
+
+.notice {
+  font-size: 12px;
 }
 
 header h1 {
@@ -126,4 +146,10 @@ footer {
   text-align: center;
   color: azure;
   background-color: black;
+  position: fixed;
+  height: 50px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: 0;
 }

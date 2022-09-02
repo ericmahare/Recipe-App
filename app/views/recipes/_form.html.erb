@@ -12,22 +12,22 @@
       </div>
     <% end %>
 
-      <div class="field">
-        <%= form.text_field :name, size:"73x10", placeholder:"Recipe Name" %>
+      <div class="form-group">
+        <%= form.text_field :name, size:"73x10", placeholder:"Recipe Name", class: "form-control"%>
       </div>
-      <div class="field">
-        <%= form.text_field :preparation_time, placeholder:"Preparation Time" %>
+      <div class="form-group">
+        <%= form.text_field :preparation_time, placeholder:"Preparation Time", class: "form-control" %>
       </div>
-      <div class="field">
-        <%= form.text_field :cooking_time, placeholder:"Cooking Time" %>
+      <div class="form-group">
+        <%= form.text_field :cooking_time, placeholder:"Cooking Time", class: "form-control" %>
       </div>
-      <div class="">
-        <%= form.text_area :description, size:"34x5", placeholder:"Recipe Descrption" %>
+      <div class="form-group">
+        <%= form.text_area :description, size:"34x5", placeholder:"Recipe Descrption", class: "form-control" %>
       </div>
-      <div class="check">
-        <%= form.check_box :public %>
+      <div class="form-group">
+        <%= form.check_box :public%>
         <%= form.label :public %>
       </div>
-      <%= form.submit "Submit New Recipe"%>
+      <%= form.submit "Submit New Recipe", class: "form-control btn btn-success"%>
     <% end %>
 </div>

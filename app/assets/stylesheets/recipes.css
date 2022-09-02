@@ -12,11 +12,10 @@ h2 span {
 }
 
 .recipe {
-  width: 90%;
   min-height: 10vh;
   margin: 2rem auto;
   padding: 1rem 2rem;
-  border: 1px solid gray;
+  border: 2px solid gray;
   display: flex;
   justify-content: space-between;
   position: relative;
