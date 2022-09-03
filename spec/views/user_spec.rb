@@ -19,6 +19,6 @@ RSpec.describe User, type: :view do
     fill_in 'user[email]', with: @user1.email
     fill_in 'user[password]', with: @user1.password
     click_button 'Log in'
-    expect(page).to have_content('Log out')
+    expect(page).to have_content('Logout')
   end
 end
