@@ -1,0 +1,111 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+h1 span,
+h2 span {
+  background-color: goldenrod;
+  border-radius: 30%;
+  padding: 0.5rem;
+  font-size: medium;
+  font-style: italic;
+}
+
+.recipe {
+  width: 90%;
+  min-height: 10vh;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  border: 2px solid gray;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.time {
+  position: absolute;
+  top: 0;
+  left: 86%;
+}
+
+.sub {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 20%;
+  max-width: 30%;
+  word-break: break-all;
+}
+
+.sub-main {
+  margin-top: 7px;
+  display: flex;
+  flex-direction: column;
+  max-height: 90%;
+  justify-content: center;
+}
+
+.text-info {
+  display: flex;
+  height: 100%;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.sub span a {
+  color: aqua;
+  text-decoration: none;
+}
+
+.sub span .delete {
+  color: crimson;
+}
+
+.sub span a:hover {
+  text-decoration: underline;
+}
+
+.recipe desc {
+  max-width: 65%;
+  word-break: break-all;
+}
+
+.center-link {
+  margin: 2rem 47%;
+  color: aqua;
+  text-decoration: underline;
+}
+
+.center-link:hover {
+  text-decoration: none;
+  color: goldenrod;
+}
+
+.top-section {
+  display: flex;
+  justify-content: space-around;
+}
+
+.top-left {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.mid-section {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 1px solid gray;
+  padding-bottom: 2rem;
+}
+
+.mid-section button {
+  padding: 10px 1rem;
+  border-radius: 0;
+  background-color: aqua;
+}
+
+.hidden {
+  display: none;
+}

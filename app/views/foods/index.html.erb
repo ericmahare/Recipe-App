@@ -1,0 +1,30 @@
+<section>
+<h2 class="food-header">All foods</h2>
+<div class="table-wrapper">
+<div class='create-food' > <%= link_to 'Add New food', new_food_path %></div>
+    <table class="fl-table">
+        <thead>
+        <tr>
+            <th>Food</th>
+            <th>Measurement Unit</th>
+            <th>Unit Price</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+    
+        <%@foods.each do |food|%>
+            <% if food.user_id === current_user.id %>
+                <tr>
+                    <td><%=food.name%></td>
+                    <td><%=food.measurement_unit%></td>
+                    <td>$ <%=food.price%></td>
+                    <td><%= button_to "Delete Food", food_path(food.id), method: :delete, 
+                            data: {confirm: 'Are you sure?'}, class: "btn-delete" %></td>
+                </tr>
+            <%end%>
+        <%end%>
+        <tbody>
+    </table>
+</div>
+</section>

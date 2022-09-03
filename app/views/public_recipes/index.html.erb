@@ -1,0 +1,21 @@
+<h1>Public Recipes</h1>
+  <div>
+    <% @recipes.each do |recipe| %>
+        <div class="recipe">
+          <div class="sub">
+                <h2 class="mb-0"><%= recipe[:name] %>
+                <span>by <%= recipe[:author]  %></small></h2>            <span>
+              <%= link_to 'Details', recipe_path(recipe[:id]) %>
+              <% if current_user && recipe[:author_id] == current_user.id %>
+                <%= link_to 'Delete', recipes_delete_url(recipe), method: :delete, class: 'delete', data: { confirm: 'Are you sure?' } %>
+              <% end %>
+            </span>
+          </div>
+          <small class="time opacity-50 text-nowrap"> Created <%= time_ago_in_words(recipe[:created_at]) %> ago </small>
+            <div class="sub-main">
+                <p class="mb-0 opacity-75"><%= recipe[:description].truncate(100)%></p>
+                <p class="text-info"><%= recipe[:items] %> ingredients ~ total price: $<%= recipe[:total_price] %> </p>
+            </div>
+        </div>
+    <% end %>
+  </div>

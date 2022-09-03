@@ -1,0 +1,83 @@
+<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+<%= link_to 'Back', recipes_path %>
+
+<h1><%= @recipe.name %></h1>
+<div class="top-section">
+  <div class="top-left">
+    <h4>Preparation Time: &nbsp <i><%= @recipe.preparation_time %></i></h4>
+    <h4>Cooking Time: &nbsp <i><%= @recipe.cooking_time %></i></h4>
+    <h6>Cooking steps go here...</h6>
+  </div>
+  <div class="top-right">
+    <% if @recipe.public %>
+      <h2><span>Public Recipe</span></h2>
+      <% else %>
+        <h2><span>Private Recipe</span></h2>
+    <% end %>
+  </div>
+</div>
+<% if current_user && current_user.id === @recipe.user_id %>
+<div class="mid-section">
+  <div class="mid-left">
+    <%= link_to "Generate shopping list", shoppingList_list_path(@recipe), class: "btn btn-sm btn-info p-2" %>
+  </div>
+  <div class="mid-right, create-food">
+    <button type="button" class="btn btn-sm btn-info" data-toggle="modal" data-target="#exampleModalCenter">Add Ingredient</button>
+  </div>
+</div>
+<% end %>
+<div class="Bottom-section">
+  <h4 class="mt-4 text-center">Ingredients </h4>
+<div class="card d-flex justify-content-center mt-4" style="width: 80%; margin:auto">
+    <table class="table table-ligth table-hover">
+        <% if @recipe.recipe_foods.empty? %>
+            <thead><tr><th>No food in this recipe</th></tr></thead>
+        <% else %>
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Food Name</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Food Price</th>
+                <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @recipe.recipe_foods.each_with_index do |ingredient, index|%>
+                <tr>
+                    <th scope="row"><%=index + 1%></th>
+                    <td><%= ingredient.food.name %></td>
+                    <td><%= ingredient.quantity %></td>
+                    <td>$ <%= ingredient.food.price %></td>
+                    <% if current_user && current_user.id === @recipe.user_id %>
+                    <td>
+                        <%= link_to "Edit", edit_recipe_recipe_food_path(@recipe, ingredient), class:"btn btn-sm btn-primary"%>
+                  
+                        <%= link_to "Delete", recipe_foods_delete_path(@recipe, ingredient), method: :delete, class:"btn btn-sm btn-danger" %>
+                    </td>
+                    <% end %>
+                </tr>
+                <% end %>
+            </tbody>
+        <% end %>
+    </table>
+</div>
+</div>
+
+<%# Modal %>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Add ingredients for <%=@recipe.name%></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= render "recipe_foods/form"%>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<header>
+  <nav>
+    
+    <% if user_signed_in? %>
+      <div class="profile">
+        <span class="user-name"><%= current_user.name.capitalize %></span>
+        <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
+      </div>
+      <div class="app-links">
+        <%= link_to "Public Recipes", public_recipes_path, :class => 'navbar-link'%> |
+        <%= link_to "My Recipes", recipes_path, :class => 'navbar-link'%> |
+        <%= link_to "Food Section", foods_path, :class => 'navbar-link'%>
+      </div>
+      <div class="auth-links">
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'signout'%>
+      </div>
+    <% else %>
+      <div class="app-links">
+        <%= link_to "Public Recipes", public_recipes_path, :class => 'navbar-link'%>
+      </div>
+      <div class="auth-links">
+        <%= link_to "Sign up", new_user_registration_path, :class => 'signup'  %>
+        <%= link_to "Login", new_user_session_path, :class => 'signin'  %>
+      </div>
+    <% end %>  
+  </nav>
+    <h1><%= link_to "RecipeApp Home", '/' %></h1>
+</header>
