@@ -33,10 +33,23 @@ h2 span {
   flex-direction: column;
   justify-content: space-between;
   min-width: 20%;
+  max-width: 30%;
+  word-break: break-all;
 }
 
 .sub-main {
   margin-top: 7px;
+  display: flex;
+  flex-direction: column;
+  max-height: 90%;
+  justify-content: center;
+}
+
+.text-info {
+  display: flex;
+  height: 100%;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 .sub span a {
@@ -50,6 +63,11 @@ h2 span {
 
 .sub span a:hover {
   text-decoration: underline;
+}
+
+.recipe desc {
+  max-width: 65%;
+  word-break: break-all;
 }
 
 .center-link {

@@ -12,7 +12,7 @@
               <%= link_to 'Delete', recipes_delete_url(recipe), method: :delete, class: 'delete', data: { confirm: 'Are you sure?' } %>
             </span>
           </div>
-          <p><%= recipe.description %></p>
+          <p class="desc"><%= recipe.description %></p>
         </div>
       <% end %>
     <% end %>
