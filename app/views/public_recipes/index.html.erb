@@ -13,7 +13,7 @@
           </div>
           <small class="time opacity-50 text-nowrap"> Created <%= time_ago_in_words(recipe[:created_at]) %> ago </small>
             <div class="sub-main">
-                <p class="mb-0 opacity-75"><%= recipe[:description].truncate(100)%></p>
+                <p class="desc mb-0 opacity-75"><%= recipe[:description].truncate(100)%></p>
                 <p class="text-info"><%= recipe[:items] %> ingredients ~ total price: $<%= recipe[:total_price] %> </p>
             </div>
         </div>
