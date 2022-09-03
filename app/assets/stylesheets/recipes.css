@@ -25,7 +25,7 @@ h2 span {
 .time {
   position: absolute;
   top: 0;
-  left: 86%;
+  left: 80%;
 }
 
 .sub {
@@ -65,9 +65,9 @@ h2 span {
   text-decoration: underline;
 }
 
-.recipe desc {
+.recipe .desc {
   max-width: 65%;
-  word-break: break-all;
+  word-wrap: break-word;
 }
 
 .center-link {
